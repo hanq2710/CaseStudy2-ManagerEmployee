@@ -1,21 +1,17 @@
 package services;
 
-import data.AccountRepository;
 import data.IAccountRepository;
 import data.entities.Account;
 
 import java.util.Scanner;
 
 public class AccountService implements IAccountService {
-    private IAccountRepository accountRepository;
+    private final IAccountRepository accountRepository;
 
     public AccountService(IAccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
 
-    public AccountService(){
-        this.accountRepository = new AccountRepository();
-    }
     // Đăng nhập
     public boolean loginUser() {
         Account account;
@@ -58,8 +54,7 @@ public class AccountService implements IAccountService {
     }
     //Kiểm tra username đã tồn tại chưa
     public boolean checkInfo(String info) {
-        if(accountRepository.getByUsername(info) == null) return true;
-        return false;
+        return accountRepository.getByUsername(info) == null;
     }
     // Nhập email
     public String writeEmail(){
@@ -88,7 +83,7 @@ public class AccountService implements IAccountService {
         Scanner sc = new Scanner(System.in);
         Account newAccount = new Account();
         String newUsername;
-        boolean check = false;
+        boolean check;
         do {
             System.out.println("Nhập tên người dùng: ");
             newUsername = sc.nextLine();
@@ -125,10 +120,9 @@ public class AccountService implements IAccountService {
     // Lấy lại mật khẩu
     public void forgotPassword(){
         Scanner sc = new Scanner(System.in);
-        Scanner sc1 = new Scanner(System.in);
         String username;
         String email;
-        boolean checkUsername = true;
+        boolean checkUsername;
         boolean checkEmail = false;
         do {
             System.out.println("Nhâp tên người dùng: ");
@@ -142,7 +136,6 @@ public class AccountService implements IAccountService {
         accountRepository.forgotPassword(username,email);
     }
     public boolean adminCheck(String username , String password){
-        if(username.equals("admin") && password.equals("admin")) return true;
-        else return false;
+        return username.equals("admin") && password.equals("admin");
     }
 }

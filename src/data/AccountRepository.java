@@ -1,7 +1,6 @@
 package data;
 
 import data.entities.Account;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 

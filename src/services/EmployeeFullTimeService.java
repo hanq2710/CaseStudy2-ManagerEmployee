@@ -6,7 +6,7 @@ import data.entities.EmployeeFullTime;
 import java.util.Scanner;
 
 public class EmployeeFullTimeService extends BaseEmployeeService implements IEmployeeFullTimeService{
-    private IEmployeeFullTimeRepository employeeFullTimeRepository;
+    private final IEmployeeFullTimeRepository employeeFullTimeRepository;
 
     public EmployeeFullTimeService(IEmployeeFullTimeRepository employeeFullTimeRepository) {
         this.employeeFullTimeRepository = employeeFullTimeRepository;
@@ -144,7 +144,7 @@ public class EmployeeFullTimeService extends BaseEmployeeService implements IEmp
     public void changeStatusEmployeeFullTime() {
        Scanner sc = new Scanner(System.in);
         String cmnd;
-        boolean check = false;
+        boolean check;
         do {
             System.out.println("Nhập số chứng minh của nhân viên: ");
             cmnd = sc.nextLine();

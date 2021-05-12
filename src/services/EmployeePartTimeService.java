@@ -1,13 +1,12 @@
 package services;
 
-import data.EmployeePartTimeRepository;
 import data.IEmployeePartTimeRepository;
 import data.entities.EmployeePartTime;
 
 import java.util.Scanner;
 
 public class EmployeePartTimeService extends BaseEmployeeService implements IEmployeePartTimeService{
-    private IEmployeePartTimeRepository employeePartTimeRepository;
+    private final IEmployeePartTimeRepository employeePartTimeRepository;
 
     public EmployeePartTimeService(IEmployeePartTimeRepository employeePartTimeRepository) {
         this.employeePartTimeRepository = employeePartTimeRepository;
@@ -83,7 +82,7 @@ public class EmployeePartTimeService extends BaseEmployeeService implements IEmp
         System.out.println("Nhập vào số chứng minh nhân dân của nhân viên muốn xóa: ");
         Scanner  sc = new Scanner(System.in);
         String cmnd;
-        boolean check = false;
+        boolean check;
         do {
             cmnd = sc.nextLine();
             check = checkInfoEmployeePartTime(cmnd);
@@ -142,7 +141,7 @@ public class EmployeePartTimeService extends BaseEmployeeService implements IEmp
     public void changeStatusEmployeePartTime() {
         Scanner sc = new Scanner(System.in);
         String cmnd;
-        boolean check = false;
+        boolean check;
         do {
             System.out.println("Nhập số chứng minh của nhân viên: ");
             cmnd = sc.nextLine();

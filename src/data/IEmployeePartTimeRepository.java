@@ -1,6 +1,5 @@
 package data;
 
-import data.entities.EmployeeFullTime;
 import data.entities.EmployeePartTime;
 
 import java.util.ArrayList;

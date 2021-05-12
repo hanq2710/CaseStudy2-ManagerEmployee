@@ -1,7 +1,5 @@
 package data;
 
-import data.entities.EmployeeFullTime;
-
 import java.io.*;
 import java.util.ArrayList;
 
@@ -13,14 +11,25 @@ public class FacetoryFile<E>  {
         FileInputStream fileInputStream = null;
         ObjectInputStream objectInputStream = null;
         try{
-            if(!file.exists()) file.createNewFile();
-            if(file.length()>0){
-                fileInputStream = new  FileInputStream(file);
-                objectInputStream = new ObjectInputStream(fileInputStream);
-                arrayList = (ArrayList<E>) objectInputStream.readObject();
-            }
-            else{
-                arrayList = new ArrayList<>();
+            if(!file.exists()) {
+                file.createNewFile();
+                if(file.length()>0){
+                    fileInputStream = new  FileInputStream(file);
+                    objectInputStream = new ObjectInputStream(fileInputStream);
+                    arrayList = (ArrayList<E>) objectInputStream.readObject();
+                }
+                else{
+                    arrayList = new ArrayList<>();
+                }
+            } else {
+                if(file.length()>0){
+                    fileInputStream = new  FileInputStream(file);
+                    objectInputStream = new ObjectInputStream(fileInputStream);
+                    arrayList = (ArrayList<E>) objectInputStream.readObject();
+                }
+                else{
+                    arrayList = new ArrayList<>();
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
