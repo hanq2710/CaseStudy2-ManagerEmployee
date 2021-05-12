@@ -38,7 +38,7 @@ public class AccountRepository implements Serializable, IAccountRepository {
     @Override
     public void addAccount(Account account){
         accounts.add(account);
-        facetoryFile.writeContact("account.data.txt",accounts);
+        facetoryFile.writeFile("account.data.txt",accounts);
         System.out.println("Đăng ký thành công..!");
     }
     @Override
@@ -46,7 +46,7 @@ public class AccountRepository implements Serializable, IAccountRepository {
         for (int i = 0; i < accounts.size(); i++) {
             if(accounts.get(i).getPassword().equals(password)){
                 accounts.get(i).setPassword(newPassword);
-                facetoryFile.writeContact("account.data.txt",accounts);
+                facetoryFile.writeFile("account.data.txt",accounts);
                 System.out.println("Thay đổi thành công ..!");
                 break;
             }

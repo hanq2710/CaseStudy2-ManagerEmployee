@@ -38,7 +38,7 @@ public class FacetoryFile<E>  {
         return arrayList;
     }
     // Ghi File
-    public void writeContact(String path, ArrayList<E> arrayList){
+    public void writeFile(String path, ArrayList<E> arrayList){
         FileOutputStream fileOutputStream = null;
         ObjectOutputStream objectOutputStream = null;
         try {

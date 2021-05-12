@@ -25,7 +25,7 @@ public class EmployeePartTimeRepository implements IEmployeePartTimeRepository, 
     @Override
     public void addEmployeePartTime(EmployeePartTime employeePartTime){
         employeePartTimes.add(employeePartTime);
-        facetoryFile.writeContact("employeeparttime.data.txt",employeePartTimes);
+        facetoryFile.writeFile("employeeparttime.data.txt",employeePartTimes);
         System.out.println("Thêm thành công..!");
     }
 
@@ -35,7 +35,7 @@ public class EmployeePartTimeRepository implements IEmployeePartTimeRepository, 
         for (int i = 0; i < employeePartTimes.size(); i++) {
             if(cmnd.equals(employeePartTimes.get(i).getCmnd())){
                 employeePartTimes.set(i,updateEmployeePartTime);
-                facetoryFile.writeContact("employeeparttime.data.txt",employeePartTimes);
+                facetoryFile.writeFile("employeeparttime.data.txt",employeePartTimes);
                 System.out.println("Update thành công ..!");
             }
         }
@@ -46,7 +46,7 @@ public class EmployeePartTimeRepository implements IEmployeePartTimeRepository, 
         for (int i = 0; i < employeePartTimes.size(); i++) {
             if(cmnd.equals(employeePartTimes.get(i).getCmnd())){
                 employeePartTimes.remove(i);
-                facetoryFile.writeContact("employeeparttime.data.txt", employeePartTimes);
+                facetoryFile.writeFile("employeeparttime.data.txt", employeePartTimes);
                 System.out.println("Xóa thành công..!");
             }
         }
@@ -111,7 +111,7 @@ public class EmployeePartTimeRepository implements IEmployeePartTimeRepository, 
         for (int i = 0; i < employeePartTimes.size(); i++) {
             if (cmnd.equals(employeePartTimes.get(i).getCmnd())) {
                 employeePartTimes.get(i).setStatus(status);
-                facetoryFile.writeContact("employeeparttime.data.txt", employeePartTimes);
+                facetoryFile.writeFile("employeeparttime.data.txt", employeePartTimes);
                 System.out.println("Thay đổi thành công..!!");
             }
         }

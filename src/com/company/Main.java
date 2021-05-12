@@ -160,13 +160,14 @@ public class Main {
             case 1:
                 System.out.println("Nhân viên full time đang làm : ");
                 employeeFullTimeService.displayEmployeeFullTimeTrue();
-                System.out.println(" Nhân viên full time đang nghỉ: ");
+
+                System.out.println("Nhân viên full time đang nghỉ: ");
                 employeeFullTimeService.displayEmployeeFullTimeFalse();
                 break;
             case 2:
                 System.out.println("Nhân viên part time đang làm : ");
                 employeePartTimeService.displayEmployeePartTimeTrue();
-                System.out.println(" Nhân viên part time đang nghỉ: ");
+                System.out.println("Nhân viên part time đang nghỉ: ");
                 employeePartTimeService.displayEmployeePartTimeFalse();
                 break;
             case 3:
@@ -176,9 +177,9 @@ public class Main {
                 employeePartTimeService.displayEmployeePartTimeTrue();
                 break;
             case 4:
-                System.out.println(" Nhân viên full time đang nghỉ: ");
+                System.out.println("Nhân viên full time đang nghỉ: ");
                 employeeFullTimeService.displayEmployeeFullTimeFalse();
-                System.out.println(" Nhân viên part time đang nghỉ: ");
+                System.out.println("Nhân viên part time đang nghỉ: ");
                 employeePartTimeService.displayEmployeePartTimeFalse();
                 break;
             case 5:
@@ -186,9 +187,9 @@ public class Main {
                 employeeFullTimeService.displayEmployeeFullTimeTrue();
                 System.out.println("Nhân viên part time đang làm : ");
                 employeePartTimeService.displayEmployeePartTimeTrue();
-                System.out.println(" Nhân viên full time đang nghỉ: ");
+                System.out.println("Nhân viên full time đang nghỉ: ");
                 employeeFullTimeService.displayEmployeeFullTimeFalse();
-                System.out.println(" Nhân viên part time đang nghỉ: ");
+                System.out.println("Nhân viên part time đang nghỉ: ");
                 employeePartTimeService.displayEmployeePartTimeFalse();
                 break;
             case 6:
