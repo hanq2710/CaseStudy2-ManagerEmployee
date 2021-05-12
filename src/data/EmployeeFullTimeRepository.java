@@ -14,7 +14,6 @@ public class EmployeeFullTimeRepository implements IEmployeeFullTimeRepository, 
         facetoryFile = new FacetoryFile<EmployeeFullTime>();
         employeeFullTimes = facetoryFile.readFile("employeefulltime.data.txt");
     }
-
     //Check thông tin trùng
     @Override
     public EmployeeFullTime getInfoEmployeeFullTime(String info){
