@@ -16,13 +16,13 @@ public interface IEmployeeFullTimeRepository {
     void updateEmployeeFullTime(String cmnd, EmployeeFullTime updateEmployeeFullTime);
 
     //  Xóa
-    void deleteEmployee(String cmnd);
+    void deleteEmployeeFullTime(String cmnd);
 
     // Hiển thị
     boolean displaySalaryEmployeeFullTime(String cmnd);
 
     // Tìm kiếm
-    EmployeeFullTime[] searchEmployee(String name);
+    EmployeeFullTime[] searchEmployeeFullTime(String name);
 
     // Lấy tên = cmnd
     String getNameByCmnd(String cmnd);

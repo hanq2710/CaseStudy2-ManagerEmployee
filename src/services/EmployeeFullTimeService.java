@@ -1,6 +1,5 @@
 package services;
 
-import data.EmployeeFullTimeRepository;
 import data.IEmployeeFullTimeRepository;
 import data.entities.EmployeeFullTime;
 
@@ -95,7 +94,7 @@ public class EmployeeFullTimeService extends BaseEmployeeService implements IEmp
         System.out.println("Bạn đang xóa nhân viên " +
                 employeeFullTimeRepository.getNameByCmnd(cmnd) +
                 " với số chứng mình là: " + cmnd);
-        employeeFullTimeRepository.deleteEmployee(cmnd);
+        employeeFullTimeRepository.deleteEmployeeFullTime(cmnd);
     }
 
     // Hiển thị nhân viên full time đang làm
@@ -122,7 +121,7 @@ public class EmployeeFullTimeService extends BaseEmployeeService implements IEmp
         do {
             System.out.println("Nhâp tên nhân viên: ");
             String name = sc.nextLine();
-            employeeFullTimes = employeeFullTimeRepository.searchEmployee(name);
+            employeeFullTimes = employeeFullTimeRepository.searchEmployeeFullTime(name);
             if(employeeFullTimes.length == 0) System.err.println("Nhân viên không tồn tại..! - Vui lòng nhập lại: ");
         }  while(employeeFullTimes.length == 0);
         System.out.println("Tìm kiếm thành công..!");

@@ -62,12 +62,27 @@ public class AccountService implements IAccountService {
         return false;
     }
     // Nhập email
-    public String checkEmail(){
-        BaseEmployeeService baseEmployeeService = new BaseEmployeeService();
+    public String writeEmail(){
+        Scanner sc = new Scanner( System.in);
+        boolean checkRegexEmail;
         String email;
-        email = baseEmployeeService.writeEmail();
+        do {
+            System.out.println("Nhập email: ");
+            System.out.println("Mẫu :// demo@gmail.com ");
+            email = sc.nextLine();
+            checkRegexEmail = regexEmail(email);
+        } while (!checkRegexEmail);
         return email;
     }
+    public boolean regexEmail(String email){
+        String regexEmail =  "^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)$";
+        if(email.matches(regexEmail)) return true;
+        else {
+            System.err.println("Định dạng không đúng..! --- Vui lòng nhập lại: ");
+            return false;
+        }
+    }
+
     // Đăng ký tài khoản
     public void creatAccount(){
         Scanner sc = new Scanner(System.in);
@@ -84,8 +99,7 @@ public class AccountService implements IAccountService {
         Scanner sc1 = new Scanner(System.in);
         System.out.println("Nhập mật khẩu: ");
         newAccount.setPassword(sc1.nextLine());
-        String email = checkEmail();
-        newAccount.setEmail(email);
+        newAccount.setEmail(writeEmail());
         accountRepository.addAccount(newAccount);
     }
     // Đổi mật khẩu
@@ -119,7 +133,7 @@ public class AccountService implements IAccountService {
         do {
             System.out.println("Nhâp tên người dùng: ");
             username = sc.nextLine();
-            email = checkEmail();
+            email = writeEmail();
             checkUsername = checkInfo(username);
             if(accountRepository.getByEmail(email) == null) checkEmail = true;
             if(checkEmail || checkUsername) System.err.println("Tên người dùng hoặc email không đúng --- Vui Lòng nhập lại.");

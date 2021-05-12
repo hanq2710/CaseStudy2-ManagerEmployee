@@ -7,7 +7,7 @@ import data.IEmployeePartTimeRepository;
 
 import java.util.Scanner;
 
-public class BaseEmployeeService {
+public abstract class BaseEmployeeService {
     IEmployeeFullTimeRepository employeeFullTimeRepository = new EmployeeFullTimeRepository();
     IEmployeePartTimeRepository employeePartTimeRepository = new EmployeePartTimeRepository();
     //Phương thức đặt thuộc tính của nhân viên

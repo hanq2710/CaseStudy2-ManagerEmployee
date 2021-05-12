@@ -68,7 +68,7 @@ public class EmployeeFullTimeRepository implements IEmployeeFullTimeRepository, 
 
     // Ghi lại file khi xóa nhân viên
 @Override
-    public void deleteEmployee(String cmnd) {
+    public void deleteEmployeeFullTime(String cmnd) {
         for (int i = 0; i < employeeFullTimes.size(); i++) {
             if(cmnd.equals(employeeFullTimes.get(i).getCmnd())){
                 employeeFullTimes.remove(i);
@@ -121,7 +121,7 @@ public class EmployeeFullTimeRepository implements IEmployeeFullTimeRepository, 
     }
     // Tìm kiếm nhân viên
     @Override
-    public EmployeeFullTime[] searchEmployee(String name){
+    public EmployeeFullTime[] searchEmployeeFullTime(String name){
         return employeeFullTimes.stream().filter(
                 o -> name.equals(o.getName())).toArray(EmployeeFullTime[]::new);
     }
